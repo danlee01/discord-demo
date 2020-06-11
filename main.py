@@ -1,14 +1,15 @@
 import discord
+from discord.ext import commands
 
-client = discord.Client()
-
-@client.event
+bot = commands.Bot(command_prefix='t!', descriptions='idk yet')
+bot.remove_command('help')
+@bot.event
 async def on_ready():
-    print('We have logged in as {0.user}'.format(client))
-
-@client.event
+    print('We have logged in as {0.user}'.format(bot))
+'''
+@bot.event
 async def on_message(message):
-    if message.author == client.user:
+    if message.author == bot.user:
         return
 
     if message.content.startswith('!hello'):
@@ -16,5 +17,13 @@ async def on_message(message):
 
     if message.content.startswith('!dan'):
         await message.channel.send('a cute ass mofo')
+'''
+cogs = ['cogs.CommandEvents', 'cogs.helper']
+try:
+    for cog in cogs:
+        curr = cog
+        bot.load_extension(cog)
+except discord.ext.commands.errors.ExtensionAlreadyLoaded:
+    bot.reload_extension(curr)
 
-client.run("NzIwMzUxOTE1ODI0Nzc1MjMy.XuEurg.tQuRhmE3bYOGgeVvgTpHJgsXm98")
+bot.run("NzIwMzUxOTE1ODI0Nzc1MjMy.XuEurg.tQuRhmE3bYOGgeVvgTpHJgsXm98")
