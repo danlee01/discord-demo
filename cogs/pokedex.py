@@ -28,7 +28,13 @@ class Pokedex(commands.Cog):
             color=discord.Color.red()
         )
 
-        entry.set_image(url='https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/18.png')
+        #  The following ugly code is a workaround of a part of the pokebase module that don't work
+        sprite_url = f"https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/{pokemon.id}.png"
+        entry.set_image(url=sprite_url)
+        SEPARATOR = ', '
+        types = [field.type.name for field in pokemon.types]
+        entry.add_field(name='Base Stats', value='stats go here', inline=True)
+        entry.add_field(name='Type', value=SEPARATOR.join(types), inline=True)
 
         await ctx.send(embed=entry)
 
