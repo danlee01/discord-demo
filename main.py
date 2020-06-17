@@ -18,7 +18,7 @@ async def on_message(message):
     if message.content.startswith('!dan'):
         await message.channel.send('a cute ass mofo')
 '''
-cogs = ['cogs.CommandEvents', 'cogs.helper']
+cogs = ['cogs.CommandEvents', 'cogs.helper', 'cogs.pokedex']
 try:
     for cog in cogs:
         curr = cog
