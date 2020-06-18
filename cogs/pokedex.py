@@ -23,8 +23,8 @@ class Pokedex(commands.Cog):
             await ctx.send("```I couldn't find that entry!```")
 
         entry = discord.Embed(
-            title=pokemon.name,
-            description='shit idk yet',
+            title=pokemon.name.capitalize(),
+            description=f"*{pokemon.id}*",
             color=discord.Color.red()
         )
 
@@ -33,9 +33,10 @@ class Pokedex(commands.Cog):
         entry.set_image(url=sprite_url)
         SEPARATOR = ', '
         types = [field.type.name for field in pokemon.types]
-        entry.add_field(name='Base Stats', value='stats go here', inline=True)
-        entry.add_field(name='Type', value=SEPARATOR.join(types), inline=True)
 
+        stats = f"__**Height:**__ {pokemon.height} \n__**Weight**__: {pokemon.weight}"
+        entry.add_field(name='Base Stats', value=stats, inline=True)
+        entry.add_field(name='Type', value=SEPARATOR.join(types), inline=True)
         await ctx.send(embed=entry)
 
 
