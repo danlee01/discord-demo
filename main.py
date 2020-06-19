@@ -1,7 +1,7 @@
 import discord
 from discord.ext import commands
 
-bot = commands.Bot(command_prefix='t!', descriptions='idk yet')
+bot = commands.Bot(command_prefix='p!', descriptions='idk yet')
 bot.remove_command('help')
 @bot.event
 async def on_ready():
