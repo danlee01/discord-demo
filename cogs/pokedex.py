@@ -17,42 +17,47 @@ class Pokedex(commands.Cog):
 
     @pokedex.command()
     async def search(self, ctx):
-        """Returns a Pokedex entry"""
+        """Sends a Pokedex entry to channel"""
         args = ctx.message.content.split()
-        args.remove('t!dex')
+        args.remove('p!dex')
         args.remove('search')
         try:
             pokemon = pb.pokemon(args[0])
         except ValueError:
             await ctx.send("```I couldn't find that entry!```")
 
-        entry = discord.Embed(
-            title=pokemon.name.capitalize(),
-            description=f"*{pokemon.id}*",
-            color=discord.Color.red()
-        )
-
-        #  The following ugly code is a workaround of a part of the pokebase module that don't work
-        #sprite_url = f"https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/{pokemon.id}.png"
-        sprite_url = f"https://play.pokemonshowdown.com/sprites/xyani/{pokemon.name}.gif"
-        entry.set_image(url=sprite_url)
-        SEPARATOR = ', '
-        types = [field.type.name.capitalize() for field in pokemon.types]
-
-        stats = f"__**Height:**__ {pokemon.height} \n__**Weight**__: {pokemon.weight}"
-        entry.add_field(name='Base Stats', value=stats, inline=True)
-        entry.add_field(name='Type', value=SEPARATOR.join(types), inline=True)
+        entry = create_entry(pokemon)
         await ctx.send(embed=entry)
 
 
 
     @pokedex.command()
     async def randpoke(self, ctx):
-        """Returns a random Pokedex entry"""
-        await ctx.channel.send("```"+pb.pokemon(random.randint(0,350)).name+"```")
+        """Sends a random Pokedex entry to channel"""
+        entry = create_entry(pb.pokemon(random.randint(0,350)))
+        await ctx.channel.send(embed=entry)
 
 
 def setup(bot):
     bot.add_cog(Pokedex(bot))
 
+def create_entry(pokemon):
+    """Returns a formatted pokedex entry"""
+    entry = discord.Embed(
+        title=pokemon.name.capitalize(),
+        description=f"*{pokemon.id}*",
+        color=discord.Color.red()
+    )
 
+    #  The following ugly code is a workaround of a part of the pokebase module that don't work
+    # sprite_url = f"https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/{pokemon.id}.png"
+    sprite_url = f"https://play.pokemonshowdown.com/sprites/xyani/{pokemon.name}.gif"
+    entry.set_image(url=sprite_url)
+    SEPARATOR = ', '
+    types = [field.type.name.capitalize() for field in pokemon.types]
+
+    stats = f"__**Height:**__ {pokemon.height} \n__**Weight**__: {pokemon.weight}"
+    entry.add_field(name='Base Stats', value=stats, inline=True)
+    entry.add_field(name='Type', value=SEPARATOR.join(types), inline=True)
+
+    return entry
