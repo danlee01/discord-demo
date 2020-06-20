@@ -14,5 +14,5 @@ discord-demo is a passion project with the goal to learn more about API calls in
 - Shiny form look up
 
 ## Credit
-- [Discord.py](https://discordpy.readthedocs.io/en/latest/) 
-- [PokéAPI](https://pokeapi.co/) (through GregHilmes' [Pokebase](https://github.com/PokeAPI/pokebase) wrapper
+- [Discord.py rewrite](https://discordpy.readthedocs.io/en/latest/) 
+- [PokéAPI](https://pokeapi.co/) (through GregHilmes' [Pokebase](https://github.com/PokeAPI/pokebase) wrapper)
