@@ -28,6 +28,9 @@ discord-demo is a passion project with the goal to learn more about API calls in
 
 ## Usage
 To use Pokedex, simply enter your token at the bottom of main.py and run.
+
+Make sure you have Discord.py and Pokebase downloaded.
+
 Enjoy!
 
 ## Credit
