@@ -1,4 +1,4 @@
-# discord-demo
+# Pokedex
 An exploration of asynchronous programming, APIs, and my childhood (Pokemon!)
 
 ## About
