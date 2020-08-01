@@ -14,6 +14,10 @@ discord-demo is a passion project with the goal to learn more about API calls in
 - Ability look up
 - Shiny form look up
 
+## Usage
+To use Pokedex, simply enter your token at the bottom of main.py and run.
+Enjoy!
+
 ## Credit
 - [Discord.py rewrite](https://discordpy.readthedocs.io/en/latest/) 
 - [PokéAPI](https://pokeapi.co/) (through GregHilmes' [Pokebase](https://github.com/PokeAPI/pokebase) wrapper)
