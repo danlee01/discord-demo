@@ -1,7 +1,7 @@
 import discord
 from discord.ext import commands
 
-bot = commands.Bot(command_prefix='p!', descriptions='idk yet')
+bot = commands.Bot(command_prefix='p!', descriptions='Pokedex')
 bot.remove_command('help')
 @bot.event
 async def on_ready():
@@ -16,7 +16,7 @@ async def on_message(message):
         await message.channel.send('Hello!')
 
     if message.content.startswith('!dan'):
-        await message.channel.send('a cute ass mofo')
+        await message.channel.send('a cutie')
 '''
 cogs = ['cogs.CommandEvents', 'cogs.helper', 'cogs.pokedex']
 try:

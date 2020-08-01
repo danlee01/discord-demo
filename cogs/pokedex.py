@@ -45,7 +45,7 @@ def create_entry(pokemon):
     """Returns a formatted pokedex entry"""
     entry = discord.Embed(
         title=pokemon.name.capitalize(),
-        description=f"*{pokemon.id}*",
+        description=f"*#{pokemon.id}*",
         color=discord.Color.red()
     )
 
