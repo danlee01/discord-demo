@@ -1,6 +1,18 @@
 # Pokedex
 An exploration of asynchronous programming, APIs, and my childhood (Pokemon!)
 
+![alt text](https://play.pokemonshowdown.com/sprites/ani/pikachu-sinnoh.gif)
+![alt text](https://play.pokemonshowdown.com/sprites/ani/piplup.gif)
+![alt text](https://play.pokemonshowdown.com/sprites/ani/chimchar.gif)
+![alt text](https://play.pokemonshowdown.com/sprites/ani/turtwig.gif)
+![alt text](https://play.pokemonshowdown.com/sprites/ani/bulbasaur.gif)
+![alt text](https://play.pokemonshowdown.com/sprites/ani/torchic.gif)
+![alt text](https://play.pokemonshowdown.com/sprites/ani/chikorita.gif)
+![alt text](https://play.pokemonshowdown.com/sprites/ani/charmander.gif)
+![alt text](https://play.pokemonshowdown.com/sprites/ani/oshawott.gif)
+![alt text](https://play.pokemonshowdown.com/sprites/ani/fennekin.gif)
+![alt text](https://play.pokemonshowdown.com/sprites/ani/totodile.gif)
+
 ## About
 discord-demo is a passion project with the goal to learn more about API calls in python.
 
