@@ -49,7 +49,7 @@ def create_entry(pokemon):
         color=discord.Color.red()
     )
 
-    #  The following ugly code is a workaround of a part of the pokebase module that don't work
+    #  The following ugly code is a workaround of a part of the pokebase module that no longer works
     # sprite_url = f"https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/{pokemon.id}.png"
     sprite_url = f"https://play.pokemonshowdown.com/sprites/xyani/{pokemon.name}.gif"
     entry.set_image(url=sprite_url)

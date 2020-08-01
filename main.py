@@ -26,4 +26,4 @@ try:
 except discord.ext.commands.errors.ExtensionAlreadyLoaded:
     bot.reload_extension(curr)
 
-bot.run("NzIwMzUxOTE1ODI0Nzc1MjMy.XuEurg.tQuRhmE3bYOGgeVvgTpHJgsXm98")
+bot.run("your token here")
