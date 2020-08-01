@@ -23,12 +23,10 @@ class Pokedex(commands.Cog):
         args.remove('search')
         try:
             pokemon = pb.pokemon(args[0])
-        except ValueError:
+            entry = create_entry(pokemon)
+            await ctx.send(embed=entry)
+        except (ValueError, AttributeError):
             await ctx.send("```I couldn't find that entry!```")
-
-        entry = create_entry(pokemon)
-        await ctx.send(embed=entry)
-
 
 
     @pokedex.command()
