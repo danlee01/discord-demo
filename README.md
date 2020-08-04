@@ -14,7 +14,7 @@ An exploration of asynchronous programming, APIs, and my childhood (Pokemon!)
 ![alt text](https://play.pokemonshowdown.com/sprites/ani/totodile.gif)
 
 ## About
-discord-demo is a passion project with the goal to learn more about API calls in python.
+Pokedex is a passion project with the goal to learn more about API calls in python.
 
 ## Features
 - Basic Pokedex entries
